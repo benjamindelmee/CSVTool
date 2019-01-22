@@ -1,13 +1,18 @@
 #!/bin/bash
 
 ##
- # Add a column to a csv file.
- #
- # Author: DEB
+ # Author: Benjamin Delmée
 ##
 
 HELP="\
 Usage: $(basename $0) [options] COLUMN_NAME FILE
+Add a new column to a CSV file.
+The column is added at the end of each line.
+
+Arguments:
+    COLUMN_NAME     \t Name of the column to be added
+    FILE            \t The column will be added to the FILE
+Options:
     -h              \t Display this information
     -v <value>      \t Fill the new column with <value> (default is empty)
     -s <separator>  \t Use <separator> to separate columns (default is pipe)
