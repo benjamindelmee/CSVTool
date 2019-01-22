@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ##
- # Author: DEB
+ # Author: Benjamin Delmée
 ##
 
 HELP="\
