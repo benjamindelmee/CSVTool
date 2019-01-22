@@ -1,13 +1,17 @@
 #!/bin/bash
 
 ##
- # Merge two or more csv file.
- #
  # Author: DEB
 ##
 
 HELP="\
-Usage: $(basename $0) [options] FILES...
+Usage: $(basename $0) [options] FILEs...
+Merge multiple csv file.
+Keep only the header of the first file.
+
+Arguments:
+    FILEs     \t List of the FILEs to be merged
+Options:
     -h        \t Display this information
     -o <file> \t Place the output into <file>"
 
@@ -33,12 +37,14 @@ if [[ $# -lt 1 ]]; then
   exit 1
 fi
 
+# Print the header found in the first file
 if [[ $output ]]; then
   head -n 1 "$1" > $output
 else
   head -n 1 "$1"
 fi
 
+# Exclude the header and print the data of each file
 while [[ $# -gt 0 ]]
 do
   if [[ $output ]]; then
