@@ -49,8 +49,8 @@ else
 fi
 
 awk_script='
-    NR == 1 { print COLNAME SEP $0 }
-    NR != 1 { print VALUE SEP $0 }
+    NR == 1 { print $0 SEP COLNAME }
+    NR != 1 { print $0 SEP VALUE }
 '
 
 if [[ $output ]]; then
