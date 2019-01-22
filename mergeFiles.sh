@@ -42,9 +42,9 @@ fi
 while [[ $# -gt 0 ]]
 do
   if [[ $output ]]; then
-    tail -n +2 "$1" >> $output
+    sed '1d' "$1" >> $output
   else
-    tail -n +2 "$1"
+    sed '1d' "$1"
   fi
   shift
 done
