@@ -28,7 +28,7 @@ do
 done
 shift $(($OPTIND - 1))
 
-if [[ $# -lt 2 ]]; then
+if [[ $# -lt 1 ]]; then
   echo "Invalid option, use -h for help" >&2
   exit 1
 fi
